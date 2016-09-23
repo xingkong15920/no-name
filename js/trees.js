@@ -24,7 +24,7 @@ function shake(obj,attr,speed,callback){
 	}
 }
 //运动封装函数
-function move(obj,num){
+function move(obj,num,callback){
     //起始位置
     var startT = parseFloat(getComputedStyle(obj).top);
     //起始时间
@@ -32,7 +32,7 @@ function move(obj,num){
     //需要移动的距离
     var count = -document.documentElement.clientHeight*num - startT;
     //花费总时间 ms
-    var duration = 800;
+    var duration = 1000;
     //每次点击都要停止定时器
     clearInterval(timer);
     // 定时器
@@ -46,6 +46,11 @@ function move(obj,num){
             time = duration;
             clearInterval(timer);
         }
+		if(time == duration){
+			if(typeof callback == 'function'){
+				callback();
+			}
+		}
         //公式 :起始位置  + (匀速度 = 总距离 / 花费总时间) * 时间差(每次运行时间)
         var sp = startT + count / duration * time;
         obj.style.top = sp + 'px';
