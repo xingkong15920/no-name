@@ -9,3 +9,11 @@
 .last{
     margin-top:150px;
 }
+.clearfix:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+.pr{
+    position:relative;
+}

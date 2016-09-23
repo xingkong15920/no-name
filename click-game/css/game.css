@@ -1,0 +1,41 @@
+*{
+	margin:0;
+	padding:0;
+}
+#bigbox{
+	width:600px;
+	height:500px;
+	margin:50px auto;
+	position:relative;
+}
+input{
+	margin:10px 250px;
+}
+#box{
+	width:600px;
+	height:460px;
+	border:1px solid black;
+	position:absolute;
+	overflow:hidden;
+	left:0;
+	top:40px;
+}
+#img{
+	position:absolute;
+	top:-24px;
+	left:0;
+}
+.setbox{
+	width:100px;
+	height:60px;
+	position:absolute;
+	left:220px;
+	top:90px;
+}
+.setbox div{
+	width:100px;
+	height:30px;
+	line-height:30px;
+	border:1px solid black;
+	text-align:center;
+}

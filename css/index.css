@@ -45,7 +45,7 @@
     left:0;
     top:0;
 }
-.cont_list li{
+.list_item{
     width:100%;
     height:100%;
 }
@@ -88,4 +88,52 @@
 }
 #more a{
     color:#3f7c61;
+}
+/*个人作品*/
+#opus{
+    overflow:hidden;
+    width:1060px;
+    padding-top:100px;
+    padding-left:100px;
+    float:left;
+}
+#opus div{
+    float:left;
+    position:relative;
+    margin:10px;
+}
+#opus div a{
+    height:30px;
+    width:100%;
+    background-color:#757a7e;
+    color:white;
+    line-height:30px;
+    text-align:center;
+    position:absolute;
+    left:0;
+    bottom:0;
+    cursor:pointer;
+}
+#opus img{
+    width:300px;
+    height:200px;
+    border:5px solid #fff;
+    border-radius:10px;
+}
+#opus div:hover{
+    transform:scale(1.05);
+}
+#opus div:hover #opus div a{
+    text-decoration:underline;
+}
+/*作品详情提示样式*/
+#det_box{
+    margin-top:286px;
+    margin-left:50px;
+    background-color:pink;
+    width:50px;
+    height:auto;
+    background-color:white;
+    float:left;
+    border-radius:5px;
 }

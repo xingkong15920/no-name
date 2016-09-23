@@ -28,11 +28,15 @@ window.onload = function() {
     // 内容部分颜色
     var colorArr = ['#22b573','#6699cc'];
     var list = document.getElementsByClassName('cont_list')[0];
-    var listLi = list.getElementsByTagName('li');
+    var listLi = list.getElementsByClassName('list_item');
     for(var i = 0 ; i < listLi.length;i++){
         listLi[i].style.height = document.documentElement.clientHeight + 'px';
         listLi[i].style.backgroundColor = colorArr[i%colorArr.length];
     }
 
 
+    // 作品展示
+    var opus = document.getElementById('opus');
+    var a = opus.getElementsByTagName('a');
+    console.dir(a[0]);
 }
