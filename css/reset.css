@@ -1,0 +1,19 @@
+/*初始化*/
+*{
+    box-sizing: border-box;
+}
+body{
+    margin:0;
+    padding:0;
+}
+ul,li{
+    padding:0;
+    margin:0;
+    list-style:none;
+}
+a{
+    text-decoration:none;
+}
+img{
+    vertical-align:top;
+}

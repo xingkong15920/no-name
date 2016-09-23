@@ -1,0 +1,11 @@
+.center{
+    text-align:center;
+}
+.section {
+    color: #eef3f0;
+    padding: 50px;
+    transition: 0.5s;
+}
+.last{
+    margin-top:150px;
+}
