@@ -17,3 +17,9 @@
 .pr{
     position:relative;
 }
+.fl{
+    float:left;
+}
+.fr{
+    float:right;
+}
