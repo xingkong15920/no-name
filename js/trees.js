@@ -32,7 +32,7 @@ function move(obj,num,callback){
     //需要移动的距离
     var count = -document.documentElement.clientHeight*num - startT;
     //花费总时间 ms
-    var duration = 1000;
+    var duration = 500;
     //每次点击都要停止定时器
     clearInterval(timer);
     // 定时器

@@ -3,7 +3,7 @@ window.onload = function() {
     var loadBox = document.getElementById('load_box');
     setTimeout(function(){
         loadBox.style.display = 'none';
-    },800)
+    },500)
     // 获取头部
     var tHead  = document.getElementsByClassName('title_head')[0];
     var allA = tHead.getElementsByTagName('a');
@@ -28,6 +28,7 @@ window.onload = function() {
                 allA[i].style.backgroundColor = '';
             }
             flagNum = this.index;
+            console.log(flagNum,this.index,this.index%listLi.length)
             // 点击设置背景和指示三角位置
             this.style.backgroundColor = '#2e8b57';
             tri.style.left = allA[0].offsetWidth/2 - tri.offsetWidth/2 + this.index*allA[0].offsetWidth + 'px';
@@ -52,9 +53,10 @@ window.onload = function() {
             if (!flag){
                 //console.log(isFlag);
                 flagNum++;
-                if(flagNum >= allA.length-1){
-                    flagNum = allA.length-1;
+                if(flagNum >= (allA.length-1)%listLi.length){
+                    flagNum = (allA.length-1)%listLi.length;
                 }
+                console.log(allA.length%listLi.length,flagNum,allA.length-1)
                 fm();
             } else{
                 flagNum--;

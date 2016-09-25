@@ -215,21 +215,21 @@
 .ski_box_html{
     width:400px;
     height:40px;
-    background-color:red;
+    background-color:#114dc6;
     border-radius:10px;
     margin-top:40px;
 }
 .ski_box_css{
-    width:350px;
+    width:370px;
     height:40px;
-    background-color:blue;
+    background-color:#23bada;
     border-radius:10px;
     margin-top:85px;
 }
 .ski_box_js{
-    width:300px;
+    width:340px;
     height:40px;
-    background-color:yellow;
+    background-color:#1c7ac3;
     border-radius:10px;
     margin-top:105px;
 }
