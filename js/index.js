@@ -1,5 +1,7 @@
 //头部点击
 window.onload = function() {
+    var loadBox = document.getElementById('load_box');
+    loadBox.style.display = 'none';
     // 获取头部
     var tHead  = document.getElementsByClassName('title_head')[0];
     var allA = tHead.getElementsByTagName('a');
@@ -27,7 +29,7 @@ window.onload = function() {
             // 点击设置背景和指示三角位置
             this.style.backgroundColor = '#2e8b57';
             tri.style.left = allA[0].offsetWidth/2 - tri.offsetWidth/2 + this.index*allA[0].offsetWidth + 'px';
-            move(list,this.index);
+            move(list,this.index%listLi.length);
         }
     }
 
