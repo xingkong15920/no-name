@@ -3,7 +3,7 @@ window.onload = function() {
     var loadBox = document.getElementById('load_box');
     setTimeout(function(){
         loadBox.style.display = 'none';
-    },500)
+    },800)
     // 获取头部
     var tHead  = document.getElementsByClassName('title_head')[0];
     var allA = tHead.getElementsByTagName('a');
