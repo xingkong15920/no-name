@@ -261,6 +261,9 @@
 
 /*响应式   适配移动端*/
 @media all and (max-width:700px ){
+    #home{
+        padding:0;
+    }
     #su_img{
         width:100%;
         height:100%;
