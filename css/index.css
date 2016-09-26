@@ -178,6 +178,11 @@
     color:#e26c60;
     margin-bottom:20px;
 }
+
+/*响应式部分隐藏*/
+.ski_au{
+    display:none;
+}
 .ski_ico{
     width:20px;
     height:20px;
@@ -251,4 +256,42 @@
     height:100%;
     background:url(../img/loading.gif) #fff no-repeat 50% 50%;
 
+}
+
+
+/*响应式   适配移动端*/
+@media all and (max-width:700px ){
+	#ski_box{
+        display:none;
+    }
+    #skill{
+        padding-left:50px;
+        padding-top:100px;
+    }
+    #ski_list{
+        width:600px;
+
+    }
+    .ski_item{
+        float:left;
+        width:280px;
+        margin-right:10px;
+        margin-bottom:100px;
+    }
+    .ski_au{
+        display:block;
+    }
+    #frame{
+        display:none;
+    }
+    #opus{
+        width:600px;
+    }
+    #opus img{
+        width:180px;
+        height:120px;
+    }
+    #det_box{
+        margin-left:0;
+    }
 }
