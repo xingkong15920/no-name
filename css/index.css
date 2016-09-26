@@ -289,12 +289,12 @@
         margin-top:5px;
     }
     .ski_text{
-        font-size:16px;
-        line-height:20px;
+        font-size:14px;
+        line-height:16px;
     }
     .ski_item p, #frame p{
-        font-size:14px;
-        line-height:18px;
+        font-size:12px;
+        line-height:14px;
     }
     .ski_au{
         display:block;
