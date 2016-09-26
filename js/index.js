@@ -101,4 +101,8 @@ window.onload = function() {
     var opus = document.getElementById('opus');
     var a = opus.getElementsByTagName('a');
     // console.dir(a[0]);
+
+
+    // 移动端滑屏效果
+
 }
