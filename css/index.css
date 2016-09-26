@@ -264,9 +264,13 @@
     #home{
         padding:50px;
     }
+    #home h1{
+        margin-bottom:10px;
+    }
     #su_img{
         width:150px;
         height:150px;
+        margin-bottom:10px;
     }
 	#ski_box{
         display:none;
@@ -281,7 +285,7 @@
     }
     .ski_item{
         margin-right:10px;
-        margin-bottom:20px;
+        margin-bottom:10px;
     }
     .ski_ico{
         width:10px;
