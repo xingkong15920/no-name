@@ -262,7 +262,7 @@
 /*响应式   适配移动端*/
 @media all and (max-width:700px ){
     #home{
-        padding:0;
+        padding:20px;
     }
     #su_img{
         width:100%;
