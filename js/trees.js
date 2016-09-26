@@ -56,3 +56,16 @@ function move(obj,num,callback){
         obj.style.top = sp + 'px';
     },30)
 }
+
+// 控制滚轮和移动端滑屏的运动函数
+
+function fnMove(obj,num){
+	move(obj,num,function(){
+		isFlag = true;
+	});
+	for(var i = 0 ; i < allA.length ; i++ ){
+		allA[i].style.backgroundColor = '';
+	}
+	allA[num].style.backgroundColor = '#2e8b57';
+	tri.style.left = allA[0].offsetWidth/2 - tri.offsetWidth/2 + num*allA[0].offsetWidth + 'px';
+}

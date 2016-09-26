@@ -15,6 +15,10 @@ window.onload = function() {
     // 设置滚轮时间
     var flogDate;
 
+    // 设置移动端滑屏所需变量
+    var mobTrue = true;
+    var mobY = 0;
+    var mobNum = 0;
     //获取小三角
     var tri = document.getElementById('tri');
     tri.style.left = allA[0].offsetWidth/2 - tri.offsetWidth/2 + 'px';
@@ -27,8 +31,7 @@ window.onload = function() {
             for(var i = 0 ; i < allA.length ; i++ ){
                 allA[i].style.backgroundColor = '';
             }
-            flagNum = this.index;
-            console.log(flagNum,this.index,this.index%listLi.length)
+            mobNum = flagNum = this.index;
             // 点击设置背景和指示三角位置
             this.style.backgroundColor = '#2e8b57';
             tri.style.left = allA[0].offsetWidth/2 - tri.offsetWidth/2 + this.index*allA[0].offsetWidth + 'px';
@@ -37,6 +40,7 @@ window.onload = function() {
     }
 
     // 滚轮控制页面
+    var contBox = document.getElementById('cont_box');
     document.onmousewheel = flogMove;
     document.addEventListener('DOMMouseScroll', flogMove);
     var isFlag = true;
@@ -56,14 +60,14 @@ window.onload = function() {
                 if(flagNum >= (allA.length-1)%listLi.length){
                     flagNum = (allA.length-1)%listLi.length;
                 }
-                console.log(allA.length%listLi.length,flagNum,allA.length-1)
-                fm();
+                //console.log(allA.length%listLi.length,flagNum,allA.length-1)
+                fnMove(flagNum)
             } else{
                 flagNum--;
                 if( flagNum <= 0 ){
                     flagNum = 0;
                 }
-                fm();
+                fnMove(flagNum)
             }
         }
         e.preventDefault();
@@ -73,17 +77,6 @@ window.onload = function() {
 
     // 滚轮事件封装函数
 
-    function fm(){
-        move(list,flagNum,function(){
-            isFlag = true;
-            //console.log(isFlag);
-        });
-        for(var i = 0 ; i < allA.length ; i++ ){
-            allA[i].style.backgroundColor = '';
-        }
-        allA[flagNum].style.backgroundColor = '#2e8b57';
-        tri.style.left = allA[0].offsetWidth/2 - tri.offsetWidth/2 + flagNum*allA[0].offsetWidth + 'px';
-    }
     var contBox = document.getElementById('cont_box');
     contBox.style.height = document.documentElement.clientHeight + 'px';
 
@@ -104,6 +97,50 @@ window.onload = function() {
 
 
     // 移动端滑屏效果
+    var mobTrue = true;
+    var mobY = 0;
+    var mobNum = 0;
+    contBox.addEventListener(
+        'touchstart',
+        function(e){
+            mobY = e.changedTouches[0].pageY;
+        }
+    )
+    contBox.addEventListener(
+        'touchmove',
+        function(e){
+            var nowY = e.changedTouches[0].pageY;
+            var numY = Math.abs(nowY - mobY);
+            if( numY > 50 ){
+                if(nowY - mobY < 0  && isFlag){
+                    isFlag = false;
+                    mobNum++;
+                    if(mobNum >= listLi.length-1){
+                        mobNum = listLi.length-1;
+                    }
+                    fnMove(mobNum);
+                }else if(nowY - mobY > 0  && isFlag){
+                    isFlag = false;
+                    mobNum--;
+                    if( mobNum <= 0 ){
+                        mobNum = 0;
+                    }
+                    fnMove(mobNum);
+                }
+            }
+        }
+    )
 
+    // 控制滚轮和移动端滑屏的运动函数
 
+    function fnMove(num){
+    	move(list,num,function(){
+    		isFlag = true;
+    	});
+    	for(var i = 0 ; i < allA.length ; i++ ){
+    		allA[i].style.backgroundColor = '';
+    	}
+    	allA[num].style.backgroundColor = '#2e8b57';
+    	tri.style.left = allA[0].offsetWidth/2 - tri.offsetWidth/2 + num*allA[0].offsetWidth + 'px';
+    }
 }
